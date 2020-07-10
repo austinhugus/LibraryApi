@@ -1,9 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace libraryapi.Models {
-    public class Book {
-        public Book (string title, string author, string description, int inStock, int pageCount, string genre) {
+namespace libraryapi.Models
+{
+    public class Book
+    {
+        public Book(string title, string author, string description, int inStock, int pageCount, string genre, bool availability)
+        {
 
             Title = title;
             Author = author;
@@ -11,7 +14,8 @@ namespace libraryapi.Models {
             InStock = inStock;
             PageCount = pageCount;
             Genre = genre;
-            Id = Guid.NewGuid ().ToString ();
+            Id = Guid.NewGuid().ToString();
+            Availability = availability;
 
         }
         public string Id { get; set; }
@@ -31,8 +35,11 @@ namespace libraryapi.Models {
 
         public string Genre { get; set; }
 
-        public Book () {
-            Id = Guid.NewGuid ().ToString ();
+        public bool Availability { get; set; }
+
+        public Book()
+        {
+            Id = Guid.NewGuid().ToString();
         }
     }
 }
